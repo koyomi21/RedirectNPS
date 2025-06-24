@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirección</title>
+  <script>
+    window.onload = function () {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+
+      if (id) {
+        // Redirigir a una nueva URL usando el parámetro "id"
+        const nuevaURL = `https://20.114.194.230:8107?id=${encodeURIComponent(id)}&lan=es&chn=FLOTA%3ACompraMP`;
+        window.location.href = nuevaURL;
+      } else {
+        // Si no hay parámetro "id", opcionalmente mostrar algo o redirigir a otra página
+        document.body.innerHTML = "<h2>Falta el parámetro 'id'</h2>";
+      }
+    };
+  </script>
+</head>
+<body>
+  <p>Redirigiendo...</p>
+</body>
+</html>
